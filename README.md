@@ -1,8 +1,11 @@
-### Website designed as a photoportfolio
-
-# Teck stack:
-## HTML CSS JS
-
 # Istrati Daniel - Portfolio Website
+Website designed as a photoportfolio 
+
+Link: wip
+
+## Teck stack:
+HTML CSS JS
+
+
 
 
