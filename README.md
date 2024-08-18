@@ -1,7 +1,7 @@
 # Istrati Daniel - Portfolio Website
 Website designed as a photoportfolio 
 
-Link: wip
+Link: https://d4n1ell.github.io/photoportfolio/
 
 ## Teck stack:
 HTML CSS JS
