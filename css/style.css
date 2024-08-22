@@ -196,6 +196,8 @@ a.active {
     font-weight: 400;
     font-size: 0.8em;
     letter-spacing: 0.2em;
+    -webkit-text-stroke-width: 0.1px;
+    -webkit-text-stroke-color: black;
 }
 
 
@@ -519,7 +521,7 @@ div.rightfooter:hover p {
 
 .projheader {
     height: 100vh;
-    background-image: url('../front2.jpg');
+    background-image: url('../photos/Portfolio/planta4.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -624,13 +626,18 @@ header .projyear {
 
 
 .banneresclusioni {
-    background-image: url('../img/ritagli/Maniscuola.jpg');
+    background-image: url('../photos/Car meet/dodge5.jpg');
     background-position: bottom;
     background-size: cover;
     height: 80vh;
     width: 100%;
     margin-bottom: 10%;
 }
+
+iframe {
+    display: block;
+    margin: 0 auto;
+ }
 
 .projexpl {
     display: flex;
