@@ -604,7 +604,7 @@ div.rightfooter:hover p {
 }
 
 .h1proj {
-    font-size: 10vw;
+    font-size: 7vw;
     font-weight: 400;
     color: black;
     letter-spacing: 0.2vw;
@@ -784,20 +784,11 @@ strong {
 
 
 
-
-
-
-
-
-
-
-
-
 /* IPS TYPOGRAPHUS */
 
 
-.bannerips {
-    background-image: url('../img/Ceppi.jpg');
+.bannerlego {
+    background-image: url('../photos/Lego/legocountach1.jpg');
     background-position: top;
     background-size: cover;
     height: 80vh;
