@@ -11,6 +11,10 @@ window.onscroll = function() {
 
 document.querySelectorAll('img').forEach(img => {
   img.onclick = function() {
+    if (document.fullscreenElement === this) {
+      document.exitFullscreen();
+    } else {
       this.requestFullscreen();
+    }
   };
 });
