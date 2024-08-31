@@ -1375,7 +1375,7 @@ strong {
 
 .aboutheader {
     height: 100vh;
-    background-image: url('../img/Giovanni_retrotesta_sfondo.jpg');
+    background-image: url('');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -1417,7 +1417,7 @@ strong {
 }
 
 .aboutimagebanner {
-    background-image: url('../img/Tommaso_Battisti_an.jpg');
+    background-image: url('../photos/Selfi/eu5.jpg'); /* About text profile pic*/
     background-position: center center;
     background-size: cover;
     width: 100%;
