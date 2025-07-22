@@ -1306,9 +1306,6 @@ strong {
 }
 
 
-
-
-
 @media (max-width: 419.98px) {
     .h1proj {
         font-size: 12vw;
@@ -1332,12 +1329,6 @@ strong {
     }
 
 }
-
-
-
-
-
-
 
 
 /*********************************************************************************************************************
@@ -1370,10 +1361,6 @@ strong {
     color:white;
     border: none;
 }
-
-
-
-
 
 
 /*********************************************************************************************************************
@@ -1554,13 +1541,6 @@ div.leftfooterab:hover {
 div.leftfooterab:hover p {
     transform: scale(0.9);
 }
-
-
-
-
-
-
-
 
 
 
@@ -1748,6 +1728,23 @@ div.leftfooterab:hover p {
     background-position: center center;
     background-color: 1a1a19;
   }
+
+  /************************************************************************************************************************/
+.add-to-home-screen {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+    text-align: center;
+    z-index: 100;
+}
 
 
 /*********************************************************************************************************************/
