@@ -8,11 +8,11 @@ body {
 }
 ::selection {
     color: white;
-    background: #00969eec;
+    background: #dfdfd9;
 }
 ::-moz-selection {
     color: white;
-    background: #00969eec;
+    background: #dfdfd9;
 }
 .copyright {
     width: 100%;
@@ -32,7 +32,7 @@ body {
 }
 
 .docuh1 {
-    color: black;
+    color: 1a1a19;
     font-weight: 300;
     font-size: 7.5vw;
     line-height: 2em;
@@ -91,7 +91,7 @@ body {
     line-height: 1.5em;
 }
 .docutext a {
-    color: black;
+    color: 1a1a19;
     text-decoration: underline #00979e;
 }
 .docuimg {
@@ -129,11 +129,12 @@ body {
     background-image: url('../photos/Portfolio/mezonnight.jpg');
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center center;
+    background-position: center;
     align-content: center;
     padding-top: 0px;
     text-align: center;
 }
+
 
 nav {
     width: 100%;    
@@ -151,10 +152,10 @@ nav {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    align-content: normal;
-    justify-content: normal;
     align-items: normal;
     position: relative;
+    align-content: normal;
+    justify-content: normal;
     padding-top: 3%;
     padding-right: 0%;
     padding-bottom: 0%;
@@ -185,6 +186,7 @@ h1 {
     letter-spacing: 1vw;
 }
 
+
 a.active {
     color: #00979E;
 }
@@ -193,7 +195,7 @@ a.active {
     padding-right: 7%;
     text-decoration: none;
     font-family: 'Montserrat', sans-serif;
-    color: black;
+    color: 1a1a19;
     font-weight: 400;
     font-size: 0.8em;
     letter-spacing: 0.2em;
@@ -274,7 +276,7 @@ a:hover {
 
 .portfoliocontainer {
     position: relative;
-    column-count: 2;
+    column-count: 3;
     padding: 0% 10% 0% 10%;
 }
 
@@ -282,6 +284,7 @@ a:hover {
     width: 100%;
     display: inline-block;
     overflow: hidden;
+    margin-bottom: 2%;
 }
 
 .portfoliocontainer img {
@@ -317,7 +320,7 @@ footer {
 }
 .contactfooter a {
     text-decoration: none;
-    color: black;
+    color: 1a1a19;
     transition: 0.25s ease-in-out;
     text-decoration: underline #00979E;
 }
@@ -349,7 +352,7 @@ footer {
     font-weight: 400;
     font-size: 0.8em;
     letter-spacing: 0.1em;
-    color: black;
+    color: 1a1a19;
     transition: 0.25s ease-in-out;
     text-decoration: underline #00979E;
 }
@@ -360,7 +363,7 @@ footer {
     font-weight: 400;
     font-size: 0.8em;
     letter-spacing: 0.1em;
-    color: black;
+    color: 1a1a19;
     transition: 0.25s ease-in-out;
     text-decoration: underline #00979E;
 }
@@ -388,7 +391,7 @@ footer {
     color: #00979E;
 }
 .continue a {
-    color: black;
+    color: 1a1a19;
     text-decoration: underline #00979e;
 }
 .continue a:hover {
@@ -563,7 +566,7 @@ div.rightfooter:hover p {
 
 .projlink {
     text-decoration: none;
-    color: black;
+    color: 1a1a19;
     transition: color 0.3s ease-in-out;
     display: flex;
     flex-direction: column;
@@ -619,7 +622,7 @@ div.rightfooter:hover p {
 .h1proj {
     font-size: 7vw;
     font-weight: 400;
-    color: black;
+    color: 1a1a19;
     letter-spacing: 0.2vw;
     text-align: center;
 }
@@ -769,7 +772,7 @@ strong {
 }
 
 .escltext a {
-    color: black;
+    color: 1a1a19;
     text-decoration-color: #00979E;
 }
 .escltext a:hover {
@@ -1031,7 +1034,7 @@ strong {
 }
 
 .fonticontainer ul a {
-    color: black;
+    color: 1a1a19;
     text-decoration: underline;
     text-decoration-color: #00979E;
     text-decoration-thickness: 1px;
@@ -1434,7 +1437,7 @@ strong {
 }
 
 .abouth1 {
-    color: black;
+    color: 1a1a19;
 }
 
 .bannerabout {
@@ -1743,8 +1746,20 @@ div.leftfooterab:hover p {
     background-size: contain;
     background-repeat: no-repeat no-repeat;
     background-position: center center;
-    background-color: black;
+    background-color: 1a1a19;
   }
 
 
+/*********************************************************************************************************************/
+/* In progress page */
 
+.Constructionheader {
+    height: 100vh;
+    background-image: url('../photos/back.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    align-content: center;
+    padding-top: 0px;
+    text-align: center;
+}
