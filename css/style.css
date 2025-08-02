@@ -32,7 +32,7 @@ body {
 }
 
 .docuh1 {
-    color: 1a1a19;
+    color: #1a1a19;
     font-weight: 300;
     font-size: 7.5vw;
     line-height: 2em;
@@ -91,7 +91,7 @@ body {
     line-height: 1.5em;
 }
 .docutext a {
-    color: 1a1a19;
+    color: #1a1a19;
     text-decoration: underline #00979e;
 }
 .docuimg {
@@ -195,7 +195,7 @@ a.active {
     padding-right: 7%;
     text-decoration: none;
     font-family: 'Montserrat', sans-serif;
-    color: 1a1a19;
+    color: #1a1a19;
     font-weight: 400;
     font-size: 0.8em;
     letter-spacing: 0.2em;
@@ -320,7 +320,7 @@ footer {
 }
 .contactfooter a {
     text-decoration: none;
-    color: 1a1a19;
+    color: #1a1a19;
     transition: 0.25s ease-in-out;
     text-decoration: underline #00979E;
 }
@@ -352,7 +352,7 @@ footer {
     font-weight: 400;
     font-size: 0.8em;
     letter-spacing: 0.1em;
-    color: 1a1a19;
+    color: #1a1a19;
     transition: 0.25s ease-in-out;
     text-decoration: underline #00979E;
 }
@@ -363,7 +363,7 @@ footer {
     font-weight: 400;
     font-size: 0.8em;
     letter-spacing: 0.1em;
-    color: 1a1a19;
+    color: #1a1a19;
     transition: 0.25s ease-in-out;
     text-decoration: underline #00979E;
 }
@@ -391,7 +391,7 @@ footer {
     color: #00979E;
 }
 .continue a {
-    color: 1a1a19;
+    color: #1a1a19;
     text-decoration: underline #00979e;
 }
 .continue a:hover {
@@ -463,8 +463,8 @@ div.containerfooterright {
     transition: 0.75s ease-in-out;
     overflow: hidden;
 }
-.ipsfooter {
-    background-image: url('../img/Ipscover.jpg');
+.legofooter {
+    background-image: url('../img/legocover.jpg');
     background-size: cover;
     background-position: center;
 }
@@ -566,7 +566,7 @@ div.rightfooter:hover p {
 
 .projlink {
     text-decoration: none;
-    color: 1a1a19;
+    color: #1a1a19;
     transition: color 0.3s ease-in-out;
     display: flex;
     flex-direction: column;
@@ -622,7 +622,7 @@ div.rightfooter:hover p {
 .h1proj {
     font-size: 7vw;
     font-weight: 400;
-    color: 1a1a19;
+    color: #1a1a19;
     letter-spacing: 0.2vw;
     text-align: center;
 }
@@ -754,6 +754,7 @@ strong {
     letter-spacing: 0.1vw;
 }
 .escltext {
+    text-align: justify;
     margin: 0%;
     font-size: 1.4em;
     font-weight: 400;
@@ -772,7 +773,7 @@ strong {
 }
 
 .escltext a {
-    color: 1a1a19;
+    color: #1a1a19;
     text-decoration-color: #00979E;
 }
 .escltext a:hover {
@@ -811,18 +812,18 @@ strong {
     width: 100%;
 }
 
-.ipsmaincontainervert {
+.legomaincontainervert {
     position: relative;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     width: 60%;
-    margin-top: 10%;
+    margin-top: 7%;
     margin-right: auto;
     margin-left: auto;
 }
 
-.ipscontainerver1 {
+.legocontainerver1 {
     display: flex;
     align-content: center;
     justify-content: center;
@@ -830,11 +831,11 @@ strong {
     width: 100%;
     padding-bottom: 5%;
 }
-.ipscontainerver1 img {
+.legocontainerver1 img {
     width: 100%;
 }
 
-.ipscontainerver2 {
+.legocontainerver2 {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -849,21 +850,7 @@ strong {
 }
 
 
-.ipslastesclustext {
-    width: 65%;
-    margin-top: 5%;
-    margin-right: 30%;
-    margin-left: 10%;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    align-items: left;
-    text-align: left;
-}
-
-
-
-.ipsmaincontainernowr {
+.legomaincontainernowr {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -874,26 +861,26 @@ strong {
     margin-left: auto;
 }
 
-.ipscontainerleftnowr {
+.legocontainerleftnowr {
     width: 48%;
     padding-right: 2%;
 }
-.ipscontainerrightnowr {
+.legocontainerrightnowr {
     width: 48%;
     padding-left: 2%;
 }
 
-.ipscontainerleftnowr img {
+.legocontainerleftnowr img {
     width: 100%;
     height: 100%;
 }
-.ipscontainerrightnowr img {
+.legocontainerrightnowr img {
     width: 100%;
     height: 100%;
 }
 
 
-.ipsverticalcontainer {
+.legoverticalcontainer {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -903,21 +890,21 @@ strong {
     margin-left: auto;
     margin-right: auto;
 }
-.ipsverticalcontainertop {
+.legoverticalcontainertop {
     width: 100%;
     padding-bottom: 15%;
 }
-.ipsverticalcontainerbottom {
+.legoverticalcontainerbottom {
     width: 100%;
 }
-.ipsverticalcontainertop img {
+.legoverticalcontainertop img {
     width: 100%;
 }
-.ipsverticalcontainerbottom img {
+.legoverticalcontainerbottom img {
     width: 100%;
 }
 
-.ipscontainerbottom {
+.legocontainerbottom {
     margin-top: 5%;
     display: flex;
     flex-direction: row;
@@ -926,22 +913,22 @@ strong {
     margin-left: auto;
     margin-right: auto;
 }
-.ipscontainerbottomleft {
+.legocontainerbottomleft {
     width: 25%;
     padding-right: 2.5%;
 }
-.ipscontainerbottomright {
+.legocontainerbottomright {
     width: 70%;
     padding-left: 2.5%;
 }
-.ipscontainerbottomleft img {
+.legocontainerbottomleft img {
     width: 100%;
 }
-.ipscontainerbottomright img {
+.legocontainerbottomright img {
     width: 100%;
 }
 
-.inverseipscontainerbottom {
+.inverselegocontainerbottom {
     margin-top: 5%;
     display: flex;
     flex-direction: row;
@@ -950,23 +937,23 @@ strong {
     margin-left: auto;
     margin-right: auto;
 }
-.inverseipscontainerbottomleft {
+.inverselegocontainerbottomleft {
     width: 70%;
     padding-right: 2.5%;
 }
-.inverseipscontainerbottomright {
+.inverselegocontainerbottomright {
     width: 25%;
     padding-left: 2.5%;
 }
-.inverseipscontainerbottomleft img {
+.inverselegocontainerbottomleft img {
     width: 100%;
 }
-.inverseipscontainerbottomright img {
+.inverselegocontainerbottomright img {
     width: 100%;
 }
 
 
-.ipsorizimg {
+.legoorizimg {
     margin-top: 5%;
     margin-left: 5%;
     margin-right: 5%;
@@ -976,27 +963,27 @@ strong {
     width: 90%;
 }
 
-.ipsdoubleimgcontainer {
+.legodoubleimgcontainer {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;  
     width: 70%;
-    margin-top: 10%;
+    margin-top: 7%;
     margin-left: 15%;
     margin-right: 15%;
 }
-.ipsdoubleimgleft {
+.legodoubleimgleft {
     width: 97.5%;
     padding-right: 2.5%;
 }
-.ipsdoubleimgright {
+.legodoubleimgright {
     width: 97.5%;
     padding-left: 2.5%;
 }
-.ipsdoubleimgleft img {
+.legodoubleimgleft img {
     width: 100%;
 }
-.ipsdoubleimgright img {
+.legodoubleimgright img {
     width: 100%;
 }
 
@@ -1034,7 +1021,7 @@ strong {
 }
 
 .fonticontainer ul a {
-    color: 1a1a19;
+    color: #1a1a19;
     text-decoration: underline;
     text-decoration-color: #00979E;
     text-decoration-thickness: 1px;
@@ -1055,7 +1042,7 @@ strong {
     .banneresclusioni {
         height: 60vh;
     }
-    .bannerips {
+    .bannerlego {
         height: 60vh;
     }
 }
@@ -1169,22 +1156,16 @@ strong {
         padding-left: 1%;
     }
 
-    /* Ips Typographus */
+    /* lego Countach */
 
-    .bannerips {
+    .bannerlego {
         height: 40vh;
     }
-    .ipslastesclustext {
-        width: 90%;
-        margin-bottom: 0%;
-        margin-left: auto;
-        margin-right: auto;
-    }
 
-    .ipsmaincontainervert {
+    .legomaincontainervert {
         width: 90%;
     }
-    .ipsmaincontainernowr {
+    .legomaincontainernowr {
         display: flex;
         flex-direction: column;
         flex-wrap: nowrap;
@@ -1193,27 +1174,27 @@ strong {
         margin-right: auto;
         margin-left: auto;
     }
-    .ipscontainerleftnowr {
+    .legocontainerleftnowr {
         margin-right: 5%;
         width: 95%;
         margin-bottom: 1%;
         padding: 0%;
     }
-    .ipscontainerrightnowr {
+    .legocontainerrightnowr {
         margin-left: 5%;
         width: 95%;
         padding: 0%;
     }
 
-    #ipsimg1di2 {
+    #legoimg1di2 {
         margin-bottom: 5%;
     }
-    .ipscontainerleft img {
+    .legocontainerleft img {
         width: 100%;
     }
 
 
-    .ipsdoubleimgcontainer {
+    .legodoubleimgcontainer {
         display: flex;
         flex-direction: column;
         width: 80%;
@@ -1221,21 +1202,21 @@ strong {
         margin-right: auto;
     }
 
-    .ipsdoubleimgleft {
+    .legodoubleimgleft {
         padding: 0%;
         width: 100%;
         margin-left: auto;
         margin-right: auto;
         margin-bottom: 12%;
     }
-    .ipsdoubleimgright {
+    .legodoubleimgright {
         padding: 0%;
         width: 100%;
         margin-left: auto;
         margin-right: auto;
     }
 
-    .ipscontainerbottom {
+    .legocontainerbottom {
         display: flex;
         flex-direction: column;
         flex-wrap: nowrap;
@@ -1244,25 +1225,25 @@ strong {
         margin-left: auto;
         margin-right: auto;
     }
-    .ipscontainerbottomleft {
+    .legocontainerbottomleft {
         width: 90%;
         padding: 0%;
         margin-left: auto;
         margin-right: auto;
         margin-bottom: 10%;
     }
-    .ipscontainerbottomright {
+    .legocontainerbottomright {
         width: 100%;
         padding-left: 0%;
     }
 
-    .ipsverticalcontainer {
+    .legoverticalcontainer {
         width: 90%;
     }
-    .ipsverticalcontainertop {
+    .legoverticalcontainertop {
         padding-bottom: 12% !important;
     }
-    .inverseipscontainerbottom {
+    .inverselegocontainerbottom {
         display: flex;
         flex-direction: column;
         flex-wrap: nowrap;
@@ -1271,12 +1252,12 @@ strong {
         margin-left: auto;
         margin-right: auto;
     }
-    .inverseipscontainerbottomleft {
+    .inverselegocontainerbottomleft {
         width: 100%;
         margin-bottom: 10%;
         padding: 0%;
     }
-    .inverseipscontainerbottomright {
+    .inverselegocontainerbottomright {
         width: 90%;
         padding: 0%;
         margin-left: auto;
@@ -1321,10 +1302,10 @@ strong {
     .banneresclusioni {
         height: 25vh;
     }
-    .bannerips {
+    .bannerlego {
         height: 25vh;
     }
-    .ipscontainerrightII {
+    .legocontainerrightII {
         width: 80%;
     }
 
@@ -1424,7 +1405,7 @@ strong {
 }
 
 .abouth1 {
-    color: 1a1a19;
+    color: #1a1a19;
 }
 
 .bannerabout {
@@ -1486,7 +1467,7 @@ strong {
     margin-left: 21%;
 }
 #about2, #about4 {
-    margin-left: 1%;
+    margin-left: 50%;
     color: #00979e;
 }
 
@@ -1726,7 +1707,7 @@ div.leftfooterab:hover p {
     background-size: contain;
     background-repeat: no-repeat no-repeat;
     background-position: center center;
-    background-color: 1a1a19;
+    background-color: #1a1a19;
   }
 
   /************************************************************************************************************************/
