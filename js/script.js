@@ -36,7 +36,6 @@ document.addEventListener('keydown', (event) => {
 })
 
 function setupZoomableImage(image) {
-  image.style.transition = '0.2s ease-out opacity'
   image.style.cursor = 'zoom-in'
   image.addEventListener('click', toggleZoom)
 
@@ -85,7 +84,7 @@ function setupZoomableImage(image) {
     image.style.opacity = '0'
     image.style.cursor = 'zoom-out'
 
-    activeZoom = { originalImage: image, zoomedImage }
+    activeZoom = { originalImage: image, zoomedImage, isClosing: false }
     overlay.style.opacity = '1'
     overlay.style.pointerEvents = 'auto'
     document.body.style.overflow = 'hidden'
@@ -97,16 +96,43 @@ function zoomOut() {
     return
   }
 
-  const { originalImage, zoomedImage } = activeZoom
-
-  if (zoomedImage && zoomedImage.parentNode) {
-    zoomedImage.parentNode.removeChild(zoomedImage)
+  if (activeZoom.isClosing) {
+    return
   }
 
-  originalImage.style.opacity = ''
-  originalImage.style.cursor = 'zoom-in'
+  const { originalImage, zoomedImage } = activeZoom
+  activeZoom.isClosing = true
+
+  const originalRect = originalImage.getBoundingClientRect()
+  originalImage.style.opacity = '1'
+
+  zoomedImage.style.pointerEvents = 'none'
+  zoomedImage.style.left = `${originalRect.left}px`
+  zoomedImage.style.top = `${originalRect.top}px`
+  zoomedImage.style.width = `${originalRect.width}px`
+  zoomedImage.style.height = `${originalRect.height}px`
+
   overlay.style.opacity = '0'
   overlay.style.pointerEvents = 'none'
   document.body.style.overflow = ''
-  activeZoom = null
+
+  let didFinish = false
+
+  function finishZoomOut() {
+    if (didFinish) {
+      return
+    }
+    didFinish = true
+
+    if (zoomedImage && zoomedImage.parentNode) {
+      zoomedImage.parentNode.removeChild(zoomedImage)
+    }
+
+    originalImage.style.opacity = ''
+    originalImage.style.cursor = 'zoom-in'
+    activeZoom = null
+  }
+
+  zoomedImage.addEventListener('transitionend', finishZoomOut, { once: true })
+  setTimeout(finishZoomOut, 200)
 }
