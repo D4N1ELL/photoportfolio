@@ -139,8 +139,8 @@ body {
 nav {
     width: 100%;    
     position: fixed;
-    position: -webkit-sticky;
     top: 0;
+    left: 0;
     z-index:1;
     transition: top 0.8s;
     -webkit-transition: top 0.8s;
@@ -530,38 +530,80 @@ div.rightfooter:hover p {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    padding-top: 120px;
 }
 
+
+/* Projects List Styling */
 .projectslistcontainer {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
-    padding: 40px 5%;
+    width: 100%;
+    display: flex;
     justify-content: center;
-    align-items: center;
-    width: 80%;
-    margin: auto;
+    align-items: flex-start;
+    padding: 40px 0;
+    box-sizing: border-box;
 }
 
-.projectslistcontainer li {
+.projects-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(220px, 1fr));
+    gap: 40px;
+    width: min(1000px, 90vw);
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+    justify-content: center;
+    align-content: start;
+    grid-auto-flow: row;
+}
+
+.projects-list li {
     background: white;
     padding: 20px;
     border-radius: 12px;
     text-align: center;
     transition: transform 0.3s ease-in-out;
-    list-style: none;
-    width: 300px;
+    width: 100%;
+    max-width: 300px;
     height: 300px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
 }
 
-.projectslistcontainer li:hover {
+.projects-list li:hover {
     transform: scale(1.05);
+}
+
+/* Center last row if 1 or 2 items */
+.projects-list {
+    justify-items: center;
+}
+
+@media (max-width: 900px) {
+    .projects-list {
+        grid-template-columns: repeat(2, minmax(220px, 1fr));
+        width: min(760px, 92vw);
+    }
+}
+
+@media (max-width: 600px) {
+    .projectslistcontainer {
+        padding: 20px 0;
+    }
+    .projects-list {
+        grid-template-columns: minmax(220px, 1fr);
+        gap: 40px;
+        width: min(420px, 92vw);
+    }
+    .projects-list li {
+        max-width: 100%;
+    }
 }
 
 .projlink {

@@ -8,6 +8,9 @@
 *.sln
 *.sw?
 
+photos/Portfolio/original/
+photos/Car_meet/original/
+
 previewslide.html
 previewslide.css
 
