@@ -154,6 +154,52 @@ body#indexpage {
     transform: scaleX(1);
 }
 
+/* Dropdown under a nav item (STUFF -> its projects): shown on hover or keyboard focus */
+.nav-dropdown {
+    position: relative;
+}
+
+.nav-submenu {
+    position: absolute;
+    top: calc(100% + 14px);
+    left: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    margin: 0;
+    padding: 18px 22px;
+    list-style: none;
+    background-color: rgba(245, 245, 245, 0.97);
+    box-shadow: 0 6px 20px rgba(26, 26, 25, 0.08);
+    color: #1a1a19;
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(-50%, -4px);
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+}
+
+/* Invisible bridge over the gap, so moving the cursor down doesn't close the menu */
+.nav-submenu::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -14px;
+    height: 14px;
+}
+
+.nav-dropdown:hover .nav-submenu,
+.nav-dropdown:focus-within .nav-submenu {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, 0);
+}
+
+.nav-links .nav-submenu a {
+    font-size: 0.7em;
+}
+
 .nav-toggle {
     display: none;
     position: relative;
@@ -226,6 +272,38 @@ body#indexpage {
         opacity: 1;
         visibility: visible;
     }
+    /* Phone menu: the dropdown's items are always listed under their parent */
+    .nav-dropdown {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .nav-submenu,
+    .nav-dropdown:hover .nav-submenu,
+    .nav-dropdown:focus-within .nav-submenu {
+        position: static;
+        align-items: center;
+        gap: 1em;
+        margin-top: 1.1em;
+        padding: 0;
+        background: none;
+        box-shadow: none;
+        opacity: 1;
+        visibility: inherit;
+        transform: none;
+        transition: none;
+    }
+    .nav-submenu::before {
+        display: none;
+    }
+    .nav-links .nav-submenu a {
+        font-size: 0.75em;
+        color: #6b6b67;
+    }
+    .nav-links .nav-submenu a:hover,
+    .nav-links .nav-submenu a.active {
+        color: #00979E;
+    }
 }
 
 @media (max-width: 575.98px) {
@@ -274,11 +352,6 @@ a:hover {
 /* Space between a page's sections (project cards, video, photo grid) */
 section + section > .portfoliocontainer:first-child {
     margin-top: 40px;
-}
-
-/* Project cards at the top of a page start right under the navbar, like the photos */
-.pageheader + section > .project-cards:first-child {
-    padding-top: 0;
 }
 
 
@@ -343,137 +416,11 @@ footer {
 
 
 /*********************************************************************************************************************
-/* PROJECTS PAGE */
-
-.projheader {
-    height: 100vh;
-    background-color: #f5f5f5;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    box-sizing: border-box;
-    padding-top: 120px;
-}
-
-
-/* Projects List Styling */
-.project-cards {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 40px 0;
-    box-sizing: border-box;
-}
-
-.project-cards-list {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(220px, 1fr));
-    gap: 40px;
-    width: min(1000px, 90vw);
-    margin: 0 auto;
-    padding: 0;
-    list-style: none;
-    justify-content: center;
-    align-content: start;
-    grid-auto-flow: row;
-}
-
-.project-cards-list li {
-    background: white;
-    padding: 20px;
-    border-radius: 12px;
-    text-align: center;
-    transition: transform 0.3s ease-in-out;
-    width: 100%;
-    max-width: 300px;
-    height: 300px;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
-    margin: 0 auto;
-}
-
-.project-cards-list li:hover {
-    transform: scale(1.05);
-}
-
-/* Center last row if 1 or 2 items */
-.project-cards-list {
-    justify-items: center;
-}
-
-@media (max-width: 900px) {
-    .project-cards-list {
-        grid-template-columns: repeat(2, minmax(220px, 1fr));
-        width: min(760px, 92vw);
-    }
-}
-
-@media (max-width: 600px) {
-    .project-cards {
-        padding: 20px 0;
-    }
-    .project-cards-list {
-        grid-template-columns: minmax(220px, 1fr);
-        gap: 40px;
-        width: min(420px, 92vw);
-    }
-    .project-cards-list li {
-        max-width: 100%;
-    }
-}
-
-.project-card-link {
-    text-decoration: none;
-    color: #1a1a19;
-    transition: color 0.3s ease-in-out;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.project-card-image {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 10px;
-}
-
-.project-card-title {
-    font-family: "Cormorant Garamond", serif;
-    font-size: 24px;
-    font-weight: 300;
-    text-align: center;
-}
-
-@media (max-width: 900px) {
-    .project-cards {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 600px) {
-    .project-cards {
-        grid-template-columns: repeat(1, 1fr);
-    }
-}
-
-
-/*********************************************************************************************************************
 /* Car Meet */
 
 
 .carmeet-banner {
-    background-image: url('../photos/places/Car_meet/dodge5.jpg');
+    background-image: url('../photos/stuff/Car_meet/dodge5.jpg');
     background-position: bottom;
     background-size: cover;
     height: 80vh;
@@ -999,22 +946,7 @@ strong {
 
 
 /*********************************************************************************************************************/
-/* In progress page */
-
-.Constructionheader {
-    height: 100vh;
-    background-image: url('../photos/back.jpeg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    align-content: center;
-    padding-top: 0px;
-    text-align: center;
-}
-
-
-/*********************************************************************************************************************/
-/* Category pages (people, places, stuff, clients, connect) */
+/* Connect and clients pages */
 
 
 .connectsection {
