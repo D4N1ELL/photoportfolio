@@ -41,6 +41,8 @@ if (navbar) {
 // How long the blurred background takes to fade in when opening,
 // and how long the preview and background take to fade out when closing
 const openFadeDuration = 100
+// Crossfade between photos when browsing with the arrows, arrow keys or swipes
+const cycleFadeDuration = 400
 const closeFadeDuration = 500
 
 const overlay = document.createElement('div')
@@ -166,7 +168,14 @@ function setupZoomableImage(image) {
 function zoomIn(image, animate) {
   const rect = image.getBoundingClientRect()
 
-  const zoomedImage = image.cloneNode(true)
+  // Opening copies the grid photo (already on screen and loaded) so it can grow out of it.
+  // Browsing uses a fresh image instead: a copy of a lazy photo that hasn't loaded yet
+  // can stall, while a fresh image always downloads right away.
+  const zoomedImage = animate ? image.cloneNode(true) : new Image()
+  if (!animate) {
+    zoomedImage.src = image.currentSrc || image.src
+    zoomedImage.alt = image.alt
+  }
   zoomedImage.style.position = 'fixed'
   zoomedImage.style.left = `${rect.left}px`
   zoomedImage.style.top = `${rect.top}px`
@@ -178,6 +187,9 @@ function zoomIn(image, animate) {
   zoomedImage.loading = 'eager'
 
   document.body.appendChild(zoomedImage)
+
+  // Becomes the current photo right away: the fade-in below can run immediately and checks this
+  activeZoom = { originalImage: image, zoomedImage, isClosing: false }
 
   function fitToViewport() {
     const viewportPadding = 24
@@ -195,25 +207,36 @@ function zoomIn(image, animate) {
     zoomedImage.style.height = `${targetHeight}px`
   }
 
-  // A lazy-loaded photo may not have its real size yet, so refit once it loads
-  if (!zoomedImage.complete || !zoomedImage.naturalWidth) {
-    zoomedImage.addEventListener('load', fitToViewport, { once: true })
-  }
+  const isLoaded = zoomedImage.complete && zoomedImage.naturalWidth
 
   if (animate) {
+    // Opening from the grid: grow out of the thumbnail
     zoomedImage.style.transition = '0.1s ease-out all'
     requestAnimationFrame(fitToViewport)
+    // A lazy-loaded photo may not have its real size yet, so refit once it loads
+    if (!isLoaded) {
+      zoomedImage.addEventListener('load', fitToViewport, { once: true })
+    }
   } else {
-    // Cycling with the arrow keys: show the next photo in place, animate only the close
-    fitToViewport()
-    requestAnimationFrame(() => {
-      zoomedImage.style.transition = '0.1s ease-out all'
-    })
+    // Browsing to the next/previous photo: fade in at its final size. Wait for it to load
+    // first, so it never shows at the thumbnail's cropped shape and then jumps.
+    zoomedImage.style.opacity = '0'
+    const fadeIn = () => {
+      // Skip if the viewer already moved on (another arrow press or closed) before it loaded
+      if (!activeZoom || activeZoom.zoomedImage !== zoomedImage || activeZoom.isClosing) {
+        return
+      }
+      fitToViewport()
+      zoomedImage.getBoundingClientRect() // apply the size before the fade starts
+      zoomedImage.style.transition = `opacity ${cycleFadeDuration}ms ease`
+      zoomedImage.style.opacity = '1'
+    }
+    // decode() settles once the photo is downloaded and ready to draw (at once if cached)
+    zoomedImage.decode().catch(() => {}).then(fadeIn)
   }
 
   zoomedImage.addEventListener('click', zoomOut)
 
-  activeZoom = { originalImage: image, zoomedImage, isClosing: false }
   overlay.style.transitionDuration = `${openFadeDuration}ms`
   overlay.style.opacity = '1'
   overlay.style.pointerEvents = 'auto'
@@ -234,7 +257,11 @@ function showAdjacentImage(step) {
   const images = Array.from(gallery.querySelectorAll('img'))
   const nextImage = images[(images.indexOf(originalImage) + step + images.length) % images.length]
 
-  zoomedImage.remove()
+  // Fade the current photo out underneath while the next one fades in on top
+  zoomedImage.style.pointerEvents = 'none'
+  zoomedImage.style.transition = `opacity ${cycleFadeDuration}ms ease`
+  zoomedImage.style.opacity = '0'
+  setTimeout(() => zoomedImage.remove(), cycleFadeDuration)
 
   zoomIn(nextImage, false)
 }
