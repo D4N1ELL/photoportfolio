@@ -8,8 +8,8 @@
 *.sln
 *.sw?
 
-photos/Portfolio/original/
-photos/Car_meet/original/
+# full-size originals kept next to each photo folder
+photos/**/original/
 
 previewslide.html
 previewslide.css
