@@ -277,7 +277,7 @@ section + section > .portfoliocontainer:first-child {
 }
 
 /* Project cards at the top of a page start right under the navbar, like the photos */
-.pageheader + section > .projectslistcontainer:first-child {
+.pageheader + section > .project-cards:first-child {
     padding-top: 0;
 }
 
@@ -309,7 +309,7 @@ section + section > .portfoliocontainer:first-child {
     width: 100%;
 }
 
-/* Uniform thumbnails: 3:4 portrait (product page) or 5:4 landscape (other galleries).
+/* Uniform thumbnails: 3:4 portrait (stuff page) or 5:4 landscape (other galleries).
    Other shapes are centered and trimmed to fit; the opened preview still shows the whole photo. */
 .portfoliocontainer--portrait img,
 .portfoliocontainer--landscape img {
@@ -361,7 +361,7 @@ footer {
 
 
 /* Projects List Styling */
-.projectslistcontainer {
+.project-cards {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -370,7 +370,7 @@ footer {
     box-sizing: border-box;
 }
 
-.projects-list {
+.project-cards-list {
     display: grid;
     grid-template-columns: repeat(3, minmax(220px, 1fr));
     gap: 40px;
@@ -383,7 +383,7 @@ footer {
     grid-auto-flow: row;
 }
 
-.projects-list li {
+.project-cards-list li {
     background: white;
     padding: 20px;
     border-radius: 12px;
@@ -401,37 +401,37 @@ footer {
     margin: 0 auto;
 }
 
-.projects-list li:hover {
+.project-cards-list li:hover {
     transform: scale(1.05);
 }
 
 /* Center last row if 1 or 2 items */
-.projects-list {
+.project-cards-list {
     justify-items: center;
 }
 
 @media (max-width: 900px) {
-    .projects-list {
+    .project-cards-list {
         grid-template-columns: repeat(2, minmax(220px, 1fr));
         width: min(760px, 92vw);
     }
 }
 
 @media (max-width: 600px) {
-    .projectslistcontainer {
+    .project-cards {
         padding: 20px 0;
     }
-    .projects-list {
+    .project-cards-list {
         grid-template-columns: minmax(220px, 1fr);
         gap: 40px;
         width: min(420px, 92vw);
     }
-    .projects-list li {
+    .project-cards-list li {
         max-width: 100%;
     }
 }
 
-.projlink {
+.project-card-link {
     text-decoration: none;
     color: #1a1a19;
     transition: color 0.3s ease-in-out;
@@ -440,7 +440,7 @@ footer {
     align-items: center;
 }
 
-.proj-thumbnail {
+.project-card-image {
     width: 200px;
     height: 200px;
     object-fit: cover;
@@ -448,7 +448,7 @@ footer {
     margin-bottom: 10px;
 }
 
-.progettih2 {
+.project-card-title {
     font-family: "Cormorant Garamond", serif;
     font-size: 24px;
     font-weight: 300;
@@ -456,13 +456,13 @@ footer {
 }
 
 @media (max-width: 900px) {
-    .projectslistcontainer {
+    .project-cards {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (max-width: 600px) {
-    .projectslistcontainer {
+    .project-cards {
         grid-template-columns: repeat(1, 1fr);
     }
 }
@@ -472,38 +472,49 @@ footer {
 /* Car Meet */
 
 
-.banneresclusioni {
+.carmeet-banner {
     background-image: url('../photos/places/Car_meet/dodge5.jpg');
     background-position: bottom;
     background-size: cover;
     height: 80vh;
     width: 100%;
-    margin-bottom: 10%;
+    margin-bottom: min(10%, 48px);
 }
 
-iframe {
-    display: block;
+/* Embedded video (car meet page): centered 16:9 box, full width on phones */
+.videocontainer {
+    width: min(840px, 100%);
     margin: 0 auto;
- }
+    padding: 0 16px;
+    box-sizing: border-box;
+}
 
-.projexpl {
+.videocontainer iframe {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: none;
+}
+
+.project-intro {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-around;
     align-items: baseline;
     width: 80%;
-    margin-top: 10%;
+    /* 10% of the page width looks right on phones; capped so it doesn't balloon on big screens */
+    margin-top: min(10%, 48px);
     margin-right: auto;
-    margin-bottom: 10%;
+    margin-bottom: min(10%, 48px);
     margin-left: auto;
 }
 
-.projexplleft {
+.project-intro-heading-wrap {
     width: 50%;
 }
 
-.ilprogetto {
+.project-intro-heading {
     font-size: 6vw;
     font-weight: 400;
     margin: 0%;
@@ -511,18 +522,18 @@ iframe {
 }
 
 
-.ilprogetto b {
+.project-intro-heading b {
     font-family: 'Montserrat', sans-serif;
     color: #00979E;
     font-weight: 700;
     font-size: 8vw;
 }
 
-.projexplright {
+.project-intro-body {
     padding-left: 10%;
     width: 50%;
 }
-.projexpltext {
+.project-intro-text {
     text-align: right;
     font-family: 'Montserrat', sans-serif;
     font-size: 1.2vw;
@@ -536,10 +547,10 @@ iframe {
 strong {
     font-weight: 600;
 }
-.projexpltext strong, b {
+.project-intro-text strong, b {
     font-weight: 500;
 }
-.esclnumb {
+.lego-section-heading {
     font-family: 'Montserrat', sans-serif;
     margin: 0%;
     margin-bottom: 1%;
@@ -548,7 +559,7 @@ strong {
     font-weight: 400;
     letter-spacing: 0.1vw;
 }
-.escltext {
+.lego-section-text {
     text-align: justify;
     margin: 0%;
     font-size: 1.4em;
@@ -557,11 +568,11 @@ strong {
 }
 
 
-.escltext a {
+.lego-section-text a {
     color: #1a1a19;
     text-decoration-color: #00979E;
 }
-.escltext a:hover {
+.lego-section-text a:hover {
     color: #00979E;
 }
 
@@ -570,15 +581,15 @@ strong {
 /* Lego Countach */
 
 
-.bannerlego {
-    background-image: url('../photos/product/Lego/legocountach1.jpg');
+.lego-banner {
+    background-image: url('../photos/stuff/Lego/legocountach1.jpg');
     background-position: top;
     background-size: cover;
     height: 80vh;
     width: 100%;
 }
 
-.legomaincontainervert {
+.lego-section {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -589,7 +600,7 @@ strong {
     margin-left: auto;
 }
 
-.legocontainerver1 {
+.lego-section-image {
     display: flex;
     align-content: center;
     justify-content: center;
@@ -597,11 +608,11 @@ strong {
     width: 100%;
     padding-bottom: 5%;
 }
-.legocontainerver1 img {
+.lego-section-image img {
     width: 100%;
 }
 
-.legocontainerver2 {
+.lego-section-body {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -616,7 +627,7 @@ strong {
 }
 
 
-.legodoubleimgcontainer {
+.lego-image-pair {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;  
@@ -625,27 +636,27 @@ strong {
     margin-left: 15%;
     margin-right: 15%;
 }
-.legodoubleimgleft {
+.lego-image-pair-left {
     width: 97.5%;
     padding-right: 2.5%;
 }
-.legodoubleimgright {
+.lego-image-pair-right {
     width: 97.5%;
     padding-left: 2.5%;
 }
-.legodoubleimgleft img {
+.lego-image-pair-left img {
     width: 100%;
 }
-.legodoubleimgright img {
+.lego-image-pair-right img {
     width: 100%;
 }
 
 
 @media (max-width: 1024.5px) {
-    .banneresclusioni {
+    .carmeet-banner {
         height: 60vh;
     }
-    .bannerlego {
+    .lego-banner {
         height: 60vh;
     }
 }
@@ -653,7 +664,7 @@ strong {
 @media (max-width:767.98px) {
 
 
-    .projexpltext {
+    .project-intro-text {
         font-size: 1.6vw;
     }
 
@@ -664,7 +675,7 @@ strong {
         font-size: 14vw;
     }
 
-    .projexpl {
+    .project-intro {
         display: flex;
         flex-direction: column;
         flex-wrap: nowrap;
@@ -674,34 +685,34 @@ strong {
         margin-left: auto;
         margin-right: auto;
     }
-    .projexplleft {
+    .project-intro-heading-wrap {
         width: 100%;
         padding-bottom: 5%;
     }
-    .projexplright {
+    .project-intro-body {
         width: 100%;
     }
-    .projexpltext {
+    .project-intro-text {
         text-align: left;
     }
 
 
-    .ilprogetto {
+    .project-intro-heading {
         font-size: 9vw;
     }
-    .projexpltext {
+    .project-intro-text {
         font-size: 2.4vw;
     }
-    .projexplright {
+    .project-intro-body {
         padding-left: 0% !important;
     }
 
 
-    .esclnumb {
+    .lego-section-heading {
         margin-bottom: 2%;
         font-size: 1.5em;
     }
-    .escltext {
+    .lego-section-text {
         font-size: 1.2em;
         line-height: 1.4em;
     }
@@ -709,16 +720,16 @@ strong {
 
     /* lego Countach */
 
-    .bannerlego {
+    .lego-banner {
         height: 40vh;
     }
 
-    .legomaincontainervert {
+    .lego-section {
         width: 90%;
     }
 
 
-    .legodoubleimgcontainer {
+    .lego-image-pair {
         display: flex;
         flex-direction: column;
         width: 80%;
@@ -726,14 +737,14 @@ strong {
         margin-right: auto;
     }
 
-    .legodoubleimgleft {
+    .lego-image-pair-left {
         padding: 0%;
         width: 100%;
         margin-left: auto;
         margin-right: auto;
         margin-bottom: 12%;
     }
-    .legodoubleimgright {
+    .lego-image-pair-right {
         padding: 0%;
         width: 100%;
         margin-left: auto;
@@ -747,10 +758,10 @@ strong {
 @media (max-width: 419.98px) {
 
 
-    .banneresclusioni {
+    .carmeet-banner {
         height: 25vh;
     }
-    .bannerlego {
+    .lego-banner {
         height: 25vh;
     }
 
@@ -889,11 +900,11 @@ strong {
 }
 
 
-.sudime {
+.about-me {
     margin: 10%;
 }
 
-.sudimetitle h2 {
+.about-me-title h2 {
     font-weight: 200;
     width: 50%;
     margin-right: 45%;
@@ -901,7 +912,7 @@ strong {
     text-align: left;
     font-size: 2.5em;
 }
-.sudimetext {
+.about-me-text {
     width: 90%;
     margin-right: auto;
     margin-left: auto;
@@ -912,7 +923,7 @@ strong {
     line-height: 1.4em;
 }
 
-.sudimetext p strong {
+.about-me-text p strong {
     font-weight: 500;
 }
 
@@ -922,26 +933,26 @@ strong {
 @media (max-width: 767.98px){
 
 
-    .sudimetitle h2 {
+    .about-me-title h2 {
         margin: 0%;
         width: 100%;
         text-align: left;
     }
-    .sudimetext {
+    .about-me-text {
         margin: 0%;
         width: 100%;
         text-align: left;
         font-family: 'Montserrat', sans-serif;
     }
-    .sudime {
+    .about-me {
         width: 90%;
         margin-right: auto;
         margin-left: auto;
     }
-    .sudimetext {
+    .about-me-text {
         font-size: 0.8em;
     }
-    .sudimetitle h2 {
+    .about-me-title h2 {
         font-size: 2em;
     }
 }
@@ -969,12 +980,12 @@ strong {
     .textbannerabout {
         font-size: 8vw;
     }
-    .sudimetitle h2 {
+    .about-me-title h2 {
         font-size: 1.5em;
     }
 
 
-    .sudime {
+    .about-me {
         margin-top: 48px;
     }
 }
@@ -1003,7 +1014,7 @@ strong {
 
 
 /*********************************************************************************************************************/
-/* Category pages (people, places, product & clients, connect) */
+/* Category pages (people, places, stuff, clients, connect) */
 
 
 .connectsection {
